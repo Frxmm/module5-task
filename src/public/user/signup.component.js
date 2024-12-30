@@ -1,6 +1,6 @@
 angular.module('public')
   .component('signupComponent', {
-    templateUrl: '/src/public/user/signup.html',
+    templateUrl: 'src/public/user/signup.html',
     controller:  ['MenuService', 'UserService', function(MenuService, UserService) {
         var $ctrl = this;
         $ctrl.user = {};
