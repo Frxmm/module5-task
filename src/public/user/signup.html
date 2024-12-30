@@ -1,0 +1,39 @@
+<div class="signup-container">
+    <h2>Sign Up for Our Newsletter</h2>
+    <form name="$ctrl.signupForm" ng-submit="$ctrl.submitForm()">
+      <label>First Name:</label>
+      <input type="text" ng-model="$ctrl.user.firstName" name="firstName" required>
+      <div class="error" ng-show="$ctrl.signupForm.firstName.$touched && $ctrl.signupForm.firstName.$invalid">
+        First name is required.
+      </div>
+
+      <label>Last Name:</label>
+      <input type="text" ng-model="$ctrl.user.lastName" name="lastName" required>
+      <div class="error" ng-show="$ctrl.signupForm.lastName.$touched && $ctrl.signupForm.lastName.$invalid">
+        Last name is required.
+      </div>
+
+      <label>Email:</label>
+      <input type="email" ng-model="$ctrl.user.email" name="email" required>
+      <div class="error" ng-show="$ctrl.signupForm.email.$touched && $ctrl.signupForm.email.$invalid">
+        Valid email is required.
+      </div>
+
+      <label>Phone:</label>
+      <input type="tel" ng-model="$ctrl.user.phone" name="phone" required>
+      <div class="error" ng-show="$ctrl.signupForm.phone.$touched && $ctrl.signupForm.phone.$invalid">
+        Phone number is required.
+      </div>
+
+      <label>Favorite Menu Item (Short Name):</label>
+      <input type="text" ng-model="$ctrl.user.favorite" name="favorite" required>
+      <div class="error" ng-show="$ctrl.signupForm.favorite.$touched && $ctrl.signupForm.favorite.$invalid">
+        Favorite menu item is required.
+      </div>
+
+      <button type="submit" ng-disabled="$ctrl.signupForm.$invalid">Submit</button>
+    </form>
+    <div class="success" ng-if="$ctrl.savedMessage">
+      {{ $ctrl.savedMessage }}
+    </div>
+  </div>

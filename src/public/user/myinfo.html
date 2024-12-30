@@ -1,0 +1,18 @@
+<div class="myinfo-container">
+    <h2>My Information</h2>
+    <div ng-if="$ctrl.userInfo">
+      <p><strong>First Name:</strong> {{ $ctrl.userInfo.firstName }}</p>
+      <p><strong>Last Name:</strong> {{ $ctrl.userInfo.lastName }}</p>
+      <p><strong>Email:</strong> {{ $ctrl.userInfo.email }}</p>
+      <p><strong>Phone:</strong> {{ $ctrl.userInfo.phone }}</p>
+      <h3>Favorite Menu Item</h3>
+      <div class="favorite-item">
+        <h4>{{ $ctrl.userInfo.favoriteItem.name }}</h4>
+        <p>{{ $ctrl.userInfo.favoriteItem.description }}</p>
+        <img class="img-responsive" width="250" height="150" ng-src="images/menu/{{$ctrl.userInfo.favoriteItem.short_name[0]}}/{{$ctrl.userInfo.favoriteItem.short_name}}.jpg" alt="{{$ctrl.userInfo.favoriteItem.name}}">
+      </div>
+    </div>
+    <div ng-if="!$ctrl.userInfo">
+      <p>Not Signed Up Yet. <a ui-sref="signup">Sign up Now!</a></p>
+    </div>
+  </div>
